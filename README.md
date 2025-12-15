@@ -1,4 +1,4 @@
-# Abstract Summarization Metrics
+# Abstractive Summarization Metrics
 
 **Authors**: Girik Tripathi, Shriniketh Shankar, Harshita Murali, Pradeep Arjun
 
