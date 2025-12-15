@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+outputs/*.jsonl
+outputs/*.csv
+outputs/*.png
+outputs/*.jpg
+outputs/*.jpeg
+outputs/figures/*.png
+outputs/figures/*.jpg
+outputs/figures/*.jpeg
+data/*
+!data/.gitkeep
+!outputs/.gitkeep
+!outputs/figures/.gitkeep
