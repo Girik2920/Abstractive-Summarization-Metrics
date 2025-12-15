@@ -55,11 +55,12 @@ def generate_model_summaries(sources: List[str], config: dict) -> List[str]:
     summaries = []
     for text in tqdm(sources, desc="Generating model summaries"):
         output = generator(
-            text,
+            text[:1024],  # Truncate to ~1024 chars to avoid token limit issues
             max_length=max_len,
             min_length=min_len,
             num_beams=num_beams,
             do_sample=False,
+            truncation=True,
         )[0]["summary_text"]
         summaries.append(output)
     return summaries

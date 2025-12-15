@@ -23,7 +23,7 @@ def prepare_subset(config: dict) -> pd.DataFrame:
 
     dataset_name = config.get("dataset_name", "xsum")
     split = config.get("split", "test")
-    subset_size = int(config.get("subset_size", 300))
+    subset_size = int(config.get("subset_size", 50))
 
     dataset = load_dataset(dataset_name, split=split)
     dataset = dataset.shuffle(seed=random_seed)
