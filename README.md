@@ -1,4 +1,4 @@
-# When ROUGE Lies: A Faithfulness-Centered Evaluation of Summarization Metrics
+# Abstract Summarization Metrics
 
 **Authors**: Girik Tripathi, Shriniketh Shankar, Harshita Murali, Pradeep Arjun
 
@@ -70,17 +70,6 @@ max_summary_length: 64          # Max output tokens
 num_beams: 4                    # Beam search width
 ```
 
-## Troubleshooting
-
-**Issue**: Dataset loading error (`RuntimeError: Dataset scripts are no longer supported`)
-- **Solution**: Ensure `datasets==2.14.7` is installed (see requirements.txt)
-
-**Issue**: Out of memory during generation
-- **Solution**: Reduce `subset_size` in config.yaml, or use `facebook/bart-base` (smaller model)
-
-**Issue**: Streamlit app not starting
-- **Solution**: Install streamlit with `pip install streamlit`
-
 ## References
 
 1. Narayan, S., Cohen, S. B., & Lapata, M. (2018). *Don't Give Me the Details, Just the Summary! Topic-Aware Convolutional Neural Networks for Extreme Summarization*. arXiv preprint arXiv:1808.08745.
@@ -93,7 +82,7 @@ num_beams: 4                    # Beam search width
 
 ## License
 
-This project is provided for educational purposes.
+This project is for educational purposes.
 
 ## Acknowledgments
 
@@ -131,24 +120,13 @@ This project is provided for educational purposes.
 
 ## Quickstart
 
-### Prerequisites
-- Python 3.8+
-- pip package manager
-- 8GB RAM (4GB minimum)
-- 5GB disk space
-
 ### Installation & Execution
 1. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **(Optional) Configure parameters** in `config.yaml`:
-   - `subset_size`: Number of examples (default: 50)
-   - `model_name`: Summarization model (default: facebook/bart-base)
-   - `max_summary_length`: Maximum output length (default: 64 tokens)
-
-3. **Run the complete pipeline**:
+2. **Run the complete pipeline**:
    ```bash
    python src/01_prepare_data.py
    python src/02_generate_summaries.py
@@ -156,18 +134,6 @@ This project is provided for educational purposes.
    python src/04_sample_for_human_eval.py
    python src/05_analyze_and_plot.py
    ```
-   
-   Or run all at once:
-   ```bash
-   bash run_pipeline.sh
-   ```
-
-### Expected Runtime
-- **Total**: ~25 minutes (50 examples)
-- Step 1 (Data prep): 2 min
-- Step 2 (Summary generation): 12 min
-- Step 3 (Metrics): 2 min
-- Step 4-5 (Analysis): <1 min
 
 ## Pipeline Overview
 
@@ -224,7 +190,3 @@ streamlit run app/streamlit_app.py
 - Save annotations to `outputs/human_annotations.csv`
 - Explore metric distributions interactively
 - Filter by metric ranges
-
-**Access**:
-- Local: http://localhost:8501
-- Network: Depends on your setup
