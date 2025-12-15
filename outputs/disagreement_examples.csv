@@ -1,0 +1,1 @@
+id,lead_len,rouge1_lead,rouge2_lead,rougeL_lead,bert_lead,model_len,rouge1_model,rouge2_model,rougeL_model,bert_model,source,reference,lead_summary,model_summary,faithfulness_lead,faithfulness_model,coverage_lead,coverage_model,coherence_lead,coherence_model,notes
