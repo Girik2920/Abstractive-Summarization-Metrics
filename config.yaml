@@ -1,0 +1,11 @@
+dataset_name: xsum
+split: test
+subset_size: 300
+sample_size: 50
+baseline_sentences: 1
+model_name: google/pegasus-xsum
+max_summary_length: 64
+min_summary_length: 16
+num_beams: 4
+random_seed: 42
+output_dir: outputs
